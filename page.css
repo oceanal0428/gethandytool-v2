@@ -32,6 +32,7 @@ a:hover { text-decoration: underline; }
   color: #111827;
   letter-spacing: -0.02em;
   text-decoration: none;
+  flex-shrink: 0;
 }
 .logo span { color: #2563EB; }
 .logo:hover { text-decoration: none; }
@@ -44,19 +45,26 @@ a:hover { text-decoration: underline; }
   .tagline { display: none; }
 }
 
-/* Tool navigation (calculator switcher) */
+/* Tool navigation (calculator switcher) — horizontal scroll on overflow */
 .tool-nav {
   display: flex;
   gap: 16px;
   font-size: 0.875rem;
   font-weight: 500;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  min-width: 0;
 }
+.tool-nav::-webkit-scrollbar { display: none; }
 .tool-nav a {
   color: #6B7280;
   text-decoration: none;
   padding: 4px 2px;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .tool-nav a:hover {
   color: #2563EB;
@@ -66,8 +74,14 @@ a:hover { text-decoration: underline; }
   color: #2563EB;
   border-bottom-color: #2563EB;
 }
-@media (max-width: 480px) {
-  .tool-nav { gap: 12px; font-size: 0.8125rem; }
+@media (max-width: 600px) {
+  .site-header .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .logo { align-self: flex-start; }
+  .tool-nav { width: 100%; gap: 14px; font-size: 0.8125rem; padding-bottom: 2px; }
 }
 
 /* Main / article */

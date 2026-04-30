@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Tip Calculator — Fast & Free | HandyTool</title>
+<meta name="description" content="Calculate your tip instantly. Enter bill amount, choose tip %, split between friends. Free tip calculator for restaurants, delivery, taxis and more.">
+<meta name="keywords" content="tip calculator, how much to tip, tip percentage calculator, restaurant tip, split bill calculator, handytool">
+<link rel="canonical" href="https://gethandytool.com/tip.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tip Calculator — Fast & Free | HandyTool">
+<meta property="og:description" content="Calculate tips instantly for any service. Free, fast, mobile-friendly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gethandytool.com/tip.html">
+<meta property="og:site_name" content="HandyTool">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tip Calculator — Fast & Free | HandyTool">
+<meta name="twitter:description" content="Calculate tips instantly for any service. Free, fast, mobile-friendly.">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HandyTool Tip Calculator",
+  "url": "https://gethandytool.com/tip.html",
+  "description": "Free tip calculator for restaurants, delivery, taxis and more",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "HandyTool",
+    "url": "https://gethandytool.com/"
+  }
+}
+</script>
+
+<!-- Google Fonts: Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HFT1427Z23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HFT1427Z23');
+</script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7164402025911671" crossorigin="anonymous"></script>
+
+<style>
+  /* ---------- RESET ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111827;
+    background: #F9FAFB;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  input { font-family: inherit; }
+  a { color: #2563EB; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- LAYOUT ---------- */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header {
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 14px 0;
+  }
+  @media (min-width: 768px) {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+  }
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .logo:hover { text-decoration: none; }
+  .logo span { color: #2563EB; }
+
+  /* Tool navigation - horizontal scroll for many tabs */
+  .tool-nav {
+    display: flex;
+    gap: 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    min-width: 0;
+  }
+  .tool-nav::-webkit-scrollbar { display: none; }
+  .tool-nav a {
+    color: #6B7280;
+    text-decoration: none;
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .tool-nav a:hover {
+    color: #2563EB;
+    text-decoration: none;
+  }
+  .tool-nav a.active {
+    color: #2563EB;
+    border-bottom-color: #2563EB;
+  }
+  @media (max-width: 600px) {
+    .site-header .container {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+    }
+    .logo { align-self: flex-start; }
+    .tool-nav { width: 100%; gap: 14px; font-size: 0.8125rem; padding-bottom: 2px; }
+  }
+
+  /* ---------- AD PLACEHOLDERS ---------- */
+  .ad-banner-top,
+  .ad-rect-middle,
+  .ad-rect-bottom {
+    background: #F3F4F6;
+    border: 1px dashed #D1D5DB;
+    color: #9CA3AF;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 100%;
+  }
+  .ad-banner-top {
+    min-height: 90px;
+    max-width: 728px;
+  }
+  @media (max-width: 600px) {
+    .ad-banner-top { min-height: 50px; max-width: 320px; }
+  }
+  .ad-rect-middle,
+  .ad-rect-bottom {
+    min-height: 280px;
+    max-width: 336px;
+    margin: 32px auto;
+  }
+
+  /* ---------- SECTION SPACING ---------- */
+  main { padding: 24px 0 48px; }
+  section { margin-bottom: 40px; }
+
+  /* ---------- HERO / CALCULATOR ---------- */
+  .hero-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .hero-sub {
+    text-align: center;
+    color: #6B7280;
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+  @media (max-width: 480px) {
+    .hero-title { font-size: 1.625rem; }
+  }
+
+  .calc-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px;
+  }
+  @media (max-width: 480px) {
+    .calc-card { padding: 20px; }
+  }
+
+  .field-group { margin-bottom: 20px; }
+  .field-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+  .field-label .hint {
+    font-weight: 400;
+    color: #6B7280;
+    margin-left: 6px;
+    font-size: 0.8125rem;
+  }
+
+  /* Bill input */
+  .bill-row {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .bill-input-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  .bill-input-wrap::before {
+    content: attr(data-symbol);
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6B7280;
+    font-weight: 600;
+    font-size: 1.125rem;
+    pointer-events: none;
+  }
+  .bill-input {
+    width: 100%;
+    padding: 14px 14px 14px 36px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    color: #111827;
+    background: #FFFFFF;
+    transition: border-color 0.2s;
+  }
+  .currency-select {
+    padding: 0 36px 0 14px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    color: #111827;
+    background: #FFFFFF url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%236B7280' d='M6 8L0 0h12z'/></svg>") no-repeat right 12px center;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    min-width: 110px;
+  }
+  .currency-select:focus {
+    outline: none;
+    border-color: #2563EB;
+  }
+  @media (max-width: 420px) {
+    .currency-select { min-width: 90px; font-size: 0.875rem; padding-right: 30px; }
+  }
+  .bill-input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  }
+
+  /* Tip buttons */
+  .tip-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  @media (min-width: 540px) {
+    .tip-buttons { grid-template-columns: repeat(6, 1fr); }
+  }
+  .tip-btn {
+    padding: 12px 8px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #111827;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .tip-btn:hover {
+    border-color: #2563EB;
+    color: #2563EB;
+  }
+  .tip-btn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #2563EB;
+  }
+
+  /* Custom slider */
+  .custom-wrap {
+    display: none;
+    margin-top: 12px;
+    padding: 12px;
+    background: #F9FAFB;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+  }
+  .custom-wrap.visible { display: block; }
+  .custom-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .custom-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #E5E7EB;
+    border-radius: 3px;
+    outline: none;
+  }
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2563EB;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .custom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2563EB;
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+  }
+  .custom-value {
+    min-width: 56px;
+    text-align: right;
+    font-weight: 700;
+    color: #2563EB;
+    font-size: 1rem;
+  }
+
+  /* Stepper */
+  .stepper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 200px;
+  }
+  .stepper-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1.5px solid #E5E7EB;
+    background: #FFFFFF;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    transition: all 0.2s;
+  }
+  .stepper-btn:hover:not(:disabled) {
+    border-color: #2563EB;
+    color: #2563EB;
+  }
+  .stepper-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .stepper-val {
+    flex: 1;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    padding: 8px 0;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    background: #FFFFFF;
+  }
+
+  /* Rounding toggle */
+  .round-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  @media (min-width: 540px) {
+    .round-group { grid-template-columns: repeat(3, 1fr); }
+  }
+  .round-btn {
+    padding: 10px 12px;
+    border: 1.5px solid #E5E7EB;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #111827;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .round-btn:hover {
+    border-color: #2563EB;
+  }
+  .round-btn.active {
+    background: #2563EB;
+    color: #FFFFFF;
+    border-color: #2563EB;
+  }
+
+  /* Results */
+  .results {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #E5E7EB;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 540px) {
+    .results { grid-template-columns: 1fr 1fr; }
+  }
+  .result-box {
+    background: #F9FAFB;
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .result-box.primary {
+    background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%);
+    border: 1px solid #D1FAE5;
+  }
+  .result-label {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .result-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #10B981;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .result-box:not(.primary) .result-value {
+    font-size: 1.5rem;
+    color: #111827;
+  }
+  @media (max-width: 480px) {
+    .result-value { font-size: 2rem; }
+    .result-box:not(.primary) .result-value { font-size: 1.375rem; }
+  }
+
+  /* ---------- REFERENCE TABLE ---------- */
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .table-wrap {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow-x: auto;
+  }
+  .ref-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 420px;
+  }
+  .ref-table th,
+  .ref-table td {
+    padding: 14px 18px;
+    text-align: left;
+    font-size: 0.9375rem;
+  }
+  .ref-table th {
+    background: #F9FAFB;
+    font-weight: 600;
+    color: #111827;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .ref-table tbody tr:nth-child(even) {
+    background: #F9FAFB;
+  }
+  .ref-table tbody tr {
+    border-bottom: 1px solid #F3F4F6;
+  }
+  .ref-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .ref-table td:last-child {
+    font-weight: 600;
+    color: #2563EB;
+  }
+
+  /* ---------- AFFILIATE ---------- */
+  .aff-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 640px) {
+    .aff-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .aff-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .aff-badge {
+    display: inline-block;
+    background: #EFF6FF;
+    color: #2563EB;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+  .aff-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 8px;
+  }
+  .aff-headline {
+    font-size: 0.9375rem;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .aff-sub {
+    font-size: 0.875rem;
+    color: #6B7280;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+  .affiliate-btn {
+    display: inline-block;
+    background: #2563EB;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .affiliate-btn:hover {
+    background: #1D4ED8;
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  .affiliate-btn:active {
+    transform: scale(0.98);
+  }
+  .aff-disclaimer {
+    margin-top: 16px;
+    font-size: 0.8125rem;
+    color: #6B7280;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ---------- EDITORIAL CONTENT ---------- */
+  .content-block {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 28px;
+  }
+  @media (max-width: 480px) {
+    .content-block { padding: 20px; }
+  }
+  .content-block h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .content-block h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 20px 0 8px;
+    color: #111827;
+  }
+  .content-block p {
+    margin-bottom: 12px;
+    color: #374151;
+  }
+  .content-block ul {
+    margin: 0 0 12px 20px;
+    color: #374151;
+  }
+  .content-block li { margin-bottom: 4px; }
+  .formula {
+    background: #F9FAFB;
+    border-left: 3px solid #2563EB;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-family: 'SF Mono', Monaco, monospace;
+    font-size: 0.9375rem;
+    color: #111827;
+    border-radius: 4px;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .faq-item {
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    width: 100%;
+    padding: 18px 24px;
+    text-align: left;
+    background: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.15s;
+  }
+  .faq-q:hover { background: #F9FAFB; }
+  .faq-icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: #2563EB;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #374151;
+  }
+  .faq-a-inner { padding: 0 24px 18px; }
+  .faq-item.open .faq-a { max-height: 400px; }
+
+  /* ---------- FOOTER ---------- */
+  .site-footer {
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    padding: 28px 0;
+    margin-top: 40px;
+  }
+  .footer-inner {
+    text-align: center;
+  }
+  .footer-copy {
+    font-size: 0.875rem;
+    color: #111827;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 0.875rem;
+  }
+  .footer-links a { color: #6B7280; }
+  .footer-links a:hover { color: #2563EB; }
+  .footer-disclaimer {
+    font-size: 0.75rem;
+    color: #9CA3AF;
+  }
+
+  /* ---------- UTIL ---------- */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">Handy<span>Tool</span></a>
+    <nav class="tool-nav" aria-label="Calculators">
+      <a href="/">All Tools</a>
+      <a href="/tip.html" class="active">Tip</a>
+      <a href="/401k.html">401(k)</a>
+      <a href="/mortgage.html">Mortgage</a>
+      <a href="/loan.html">Loan</a>
+      <a href="/sales-tax.html">Sales Tax</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- ===== TOP BANNER AD ===== -->
+    <div class="ad-banner-top" aria-label="Advertisement">Advertisement</div>
+
+    <!-- ===== HERO CALCULATOR ===== -->
+    <section aria-labelledby="calc-title">
+      <h1 id="calc-title" class="hero-title">Tip Calculator</h1>
+      <p class="hero-sub">Instantly calculate the perfect tip and split the bill.</p>
+
+      <div class="calc-card">
+        <!-- Bill Amount -->
+        <div class="field-group">
+          <label class="field-label" for="bill">Bill Amount</label>
+          <div class="bill-row">
+            <div class="bill-input-wrap" id="billWrap" data-symbol="$">
+              <input type="number" id="bill" class="bill-input" placeholder="0.00" min="0" step="0.01" inputmode="decimal" autofocus>
+            </div>
+            <select id="currency" class="currency-select" aria-label="Currency">
+              <option value="USD" selected>USD $</option>
+              <option value="EUR">EUR €</option>
+              <option value="GBP">GBP £</option>
+              <option value="JPY">JPY ¥</option>
+              <option value="KRW">KRW ₩</option>
+              <option value="CAD">CAD C$</option>
+              <option value="AUD">AUD A$</option>
+              <option value="MXN">MXN MX$</option>
+              <option value="INR">INR ₹</option>
+              <option value="CNY">CNY ¥</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tip Percentage -->
+        <div class="field-group">
+          <label class="field-label">Tip Percentage</label>
+          <div class="tip-buttons" role="group" aria-label="Tip percentage">
+            <button type="button" class="tip-btn" data-tip="10">10%</button>
+            <button type="button" class="tip-btn" data-tip="15">15%</button>
+            <button type="button" class="tip-btn active" data-tip="18">18%</button>
+            <button type="button" class="tip-btn" data-tip="20">20%</button>
+            <button type="button" class="tip-btn" data-tip="25">25%</button>
+            <button type="button" class="tip-btn" data-tip="custom">Custom</button>
+          </div>
+          <div class="custom-wrap" id="customWrap">
+            <div class="custom-row">
+              <input type="range" id="customSlider" class="custom-slider" min="0" max="50" step="1" value="18">
+              <div class="custom-value" id="customValue">18%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Number of People -->
+        <div class="field-group">
+          <label class="field-label" for="people">Number of People <span class="hint">(1–20)</span></label>
+          <div class="stepper">
+            <button type="button" class="stepper-btn" id="peopleDown" aria-label="Decrease people">−</button>
+            <div class="stepper-val" id="peopleVal">1</div>
+            <button type="button" class="stepper-btn" id="peopleUp" aria-label="Increase people">+</button>
+          </div>
+        </div>
+
+        <!-- Rounding -->
+        <div class="field-group">
+          <label class="field-label">Rounding</label>
+          <div class="round-group" role="group" aria-label="Rounding option">
+            <button type="button" class="round-btn active" data-round="none">No rounding</button>
+            <button type="button" class="round-btn" data-round="tip">Round up tip</button>
+            <button type="button" class="round-btn" data-round="total">Round up total</button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" aria-live="polite">
+          <div class="result-box primary">
+            <div class="result-label">Tip / Person</div>
+            <div class="result-value" id="outPerTip">$0.00</div>
+          </div>
+          <div class="result-box primary">
+            <div class="result-label">Total / Person</div>
+            <div class="result-value" id="outPerTotal">$0.00</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Total Tip</div>
+            <div class="result-value" id="outTotalTip">$0.00</div>
+          </div>
+          <div class="result-box">
+            <div class="result-label">Grand Total</div>
+            <div class="result-value" id="outGrandTotal">$0.00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IN-FEED AD ===== -->
+    <div class="ad-rect-middle" aria-label="Advertisement">Advertisement</div>
+
+    <!-- ===== QUICK REFERENCE TABLE ===== -->
+    <section aria-labelledby="ref-title">
+      <h2 id="ref-title" class="section-title">Tipping Guide by Service</h2>
+      <div class="table-wrap">
+        <table class="ref-table">
+          <thead>
+            <tr><th>Service</th><th>Suggested Tip</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Restaurant (sit-down)</td><td>18–20%</td></tr>
+            <tr><td>Buffet</td><td>10%</td></tr>
+            <tr><td>Food Delivery</td><td>15–20%</td></tr>
+            <tr><td>Taxi / Rideshare</td><td>15–20%</td></tr>
+            <tr><td>Hotel Housekeeping</td><td>$2–5/night</td></tr>
+            <tr><td>Hair Salon</td><td>20%</td></tr>
+            <tr><td>Spa / Massage</td><td>20%</td></tr>
+            <tr><td>Valet Parking</td><td>$2–5</td></tr>
+            <tr><td>Bartender</td><td>$1–2/drink or 15–20%</td></tr>
+            <tr><td>Tour Guide</td><td>10–20%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== AFFILIATE SECTION ===== -->
+    <section aria-labelledby="aff-title">
+      <h2 id="aff-title" class="section-title">Pay Less, Tip Smart — Best Cash Back Cards</h2>
+      <div class="aff-grid">
+
+        <div class="aff-card">
+          <span class="aff-badge">Editor's Pick</span>
+          <div class="aff-name">Chase Freedom Unlimited</div>
+          <div class="aff-headline">Earn 1.5% cash back on every purchase</div>
+          <div class="aff-sub">Including restaurants and delivery</div>
+          <a href="#" class="affiliate-btn" rel="sponsored nofollow noopener">Check Offer →</a>
+        </div>
+
+        <div class="aff-card">
+          <span class="aff-badge">Best for Dining</span>
+          <div class="aff-name">American Express Gold Card</div>
+          <div class="aff-headline">4X points at restaurants worldwide</div>
+          <div class="aff-sub">Perfect for frequent diners</div>
+          <a href="#" class="affiliate-btn" rel="sponsored nofollow noopener">Check Offer →</a>
+        </div>
+
+        <div class="aff-card">
+          <span class="aff-badge">No Annual Fee</span>
+          <div class="aff-name">Capital One SavorOne</div>
+          <div class="aff-headline">3% cash back on dining & entertainment</div>
+          <div class="aff-sub">No annual fee</div>
+          <a href="#" class="affiliate-btn" rel="sponsored nofollow noopener">Check Offer →</a>
+        </div>
+
+      </div>
+      <p class="aff-disclaimer">* Advertiser disclosure: We may earn a commission if you apply through our links. See terms.</p>
+    </section>
+
+    <!-- ===== SEO EDITORIAL CONTENT ===== -->
+    <section aria-labelledby="guide-title">
+      <div class="content-block">
+        <h2 id="guide-title">How to Calculate a Tip</h2>
+        <p>Figuring out the right tip shouldn't be stressful. Whether you're at a restaurant, getting food delivered, or taking a rideshare, knowing the standard etiquette — and a quick formula — makes tipping painless.</p>
+
+        <h3>The Simple Tip Formula</h3>
+        <p>To calculate a tip manually, multiply your bill by the decimal version of the tip percentage:</p>
+        <div class="formula">Tip = Bill Amount × (Tip % ÷ 100)</div>
+        <p>For example, on a $50 bill at 20%: $50 × 0.20 = <strong>$10 tip</strong>, making the total $60. A quick mental shortcut for 20% is to move the decimal one place left ($50 → $5.00), then double it ($10).</p>
+
+        <h3>What Is a Good Tip Percentage in the US?</h3>
+        <p>Tipping norms have shifted upward in recent years. Current US standards (2024):</p>
+        <ul>
+          <li><strong>15%</strong> — the old baseline, now considered below average for table service</li>
+          <li><strong>18%</strong> — standard for good restaurant service</li>
+          <li><strong>20%</strong> — the widely accepted "good tip" for sit-down dining</li>
+          <li><strong>25%+</strong> — exceptional service, special occasions, or small bills</li>
+        </ul>
+
+        <h3>Tipping Etiquette by Situation</h3>
+        <p>Context matters. At a sit-down restaurant, 18–20% on the pre-tax amount is standard. For food delivery, tip 15–20% or at least $5, whichever is higher — drivers often rely on tips to cover their own fuel. In a taxi or rideshare, 15–20% is customary; round up for short rides. For coffee counters and takeout, tipping is appreciated but not expected — a dollar or two is generous.</p>
+
+        <h3>How to Split a Bill Fairly</h3>
+        <p>When dining with a group, the fairest approach depends on how you ate. If everyone had roughly equal meals, split the total (including tip) evenly by the number of people. If someone had a pricier dish or extra drinks, itemize their share and add a proportional tip. Our calculator handles even splits automatically — just enter the number of people and you'll see each person's share at a glance.</p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list" id="faqList">
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What is the standard tip in the US?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>For sit-down restaurant service, the standard tip in the United States is 18–20% of the pre-tax bill. A tip below 15% is generally viewed as dissatisfaction, while 20%+ signals excellent service.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Should I tip on the pre-tax or post-tax amount?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Etiquette experts recommend tipping on the pre-tax subtotal, since sales tax doesn't reflect the server's work. However, tipping on the post-tax total is also common and is a modest way to tip slightly more.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How much do I tip for food delivery?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>Tip 15–20% of the order total, with a minimum of $3–5 for small orders. Add more in bad weather, for long distances, or large orders. Remember: delivery fees charged by the app usually don't go to the driver.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Is it rude not to tip?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>In the US, yes — especially for table service, where servers are often paid a sub-minimum "tipped wage" and depend on tips for most of their income. Not tipping for adequate service is considered disrespectful. Poor service is better addressed by speaking with a manager.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How do I split the bill unevenly?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>For uneven splits, calculate each person's subtotal separately, then apply the same tip percentage to each subtotal. Many restaurants will print separate checks if you ask before ordering. Apps like Splitwise also help track who owes what across multiple meals.</p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What is tip creep and how do I avoid it?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>"Tip creep" is the gradual expansion of tipping to services that traditionally didn't require tips — like self-serve kiosks or quick takeout. You're not obligated to tip for counter service or self-checkout. Follow the suggested percentages only where service is actually rendered to you.</p>
+          </div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== BOTTOM AD ===== -->
+    <div class="ad-rect-bottom" aria-label="Advertisement">Advertisement</div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-copy">© <span id="footer-year">2026</span> HandyTool. All rights reserved.</div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">All Tools</a>
+      <a href="/tip.html">Tip</a>
+      <a href="/401k.html">401(k)</a>
+      <a href="/mortgage.html">Mortgage</a>
+      <a href="/loan.html">Loan</a>
+      <a href="/sales-tax.html">Sales Tax</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+    </nav>
+    <div class="footer-disclaimer">HandyTool is for informational purposes only.</div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  var fy = document.getElementById('footer-year');
+  if (fy) fy.textContent = new Date().getFullYear();
+
+  // ---------- CURRENCY CONFIG ----------
+  var CURRENCIES = {
+    USD: { symbol: '$',   decimals: 2, prefix: true  },
+    EUR: { symbol: '€',   decimals: 2, prefix: true  },
+    GBP: { symbol: '£',   decimals: 2, prefix: true  },
+    JPY: { symbol: '¥',   decimals: 0, prefix: true  },
+    KRW: { symbol: '₩',   decimals: 0, prefix: true  },
+    CAD: { symbol: 'C$',  decimals: 2, prefix: true  },
+    AUD: { symbol: 'A$',  decimals: 2, prefix: true  },
+    MXN: { symbol: 'MX$', decimals: 2, prefix: true  },
+    INR: { symbol: '₹',   decimals: 2, prefix: true  },
+    CNY: { symbol: '¥',   decimals: 2, prefix: true  }
+  };
+
+  // ---------- STATE ----------
+  var state = {
+    bill: 0,
+    tipPercent: 18,
+    people: 1,
+    rounding: 'none',
+    customActive: false,
+    currency: 'USD'
+  };
+
+  // ---------- ELEMENTS ----------
+  var billInput = document.getElementById('bill');
+  var billWrap = document.getElementById('billWrap');
+  var currencySelect = document.getElementById('currency');
+  var tipButtons = document.querySelectorAll('.tip-btn');
+  var customWrap = document.getElementById('customWrap');
+  var customSlider = document.getElementById('customSlider');
+  var customValue = document.getElementById('customValue');
+  var peopleVal = document.getElementById('peopleVal');
+  var peopleUp = document.getElementById('peopleUp');
+  var peopleDown = document.getElementById('peopleDown');
+  var roundButtons = document.querySelectorAll('.round-btn');
+
+  var outPerTip = document.getElementById('outPerTip');
+  var outPerTotal = document.getElementById('outPerTotal');
+  var outTotalTip = document.getElementById('outTotalTip');
+  var outGrandTotal = document.getElementById('outGrandTotal');
+
+  // ---------- HELPERS ----------
+  function fmt(n) {
+    if (!isFinite(n) || n < 0) n = 0;
+    var c = CURRENCIES[state.currency] || CURRENCIES.USD;
+    var rounded = c.decimals === 0 ? Math.round(n) : n;
+    var str = rounded.toFixed(c.decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return c.prefix ? (c.symbol + str) : (str + ' ' + c.symbol);
+  }
+  function applyCurrencySymbol() {
+    var c = CURRENCIES[state.currency] || CURRENCIES.USD;
+    billWrap.setAttribute('data-symbol', c.symbol);
+    if (c.decimals === 0) {
+      billInput.step = '1';
+      billInput.placeholder = '0';
+    } else {
+      billInput.step = '0.01';
+      billInput.placeholder = '0.00';
+    }
+  }
+
+  // ---------- CALCULATE ----------
+  function calculate() {
+    var bill = parseFloat(billInput.value);
+    if (!isFinite(bill) || bill < 0) bill = 0;
+    state.bill = bill;
+
+    var tipPct = state.tipPercent;
+    var people = state.people;
+
+    var tipAmount = bill * (tipPct / 100);
+    var totalBill = bill + tipAmount;
+
+    if (state.rounding === 'tip') {
+      tipAmount = Math.ceil(tipAmount);
+      totalBill = bill + tipAmount;
+    } else if (state.rounding === 'total') {
+      totalBill = Math.ceil(totalBill);
+      tipAmount = totalBill - bill;
+    }
+
+    var perPersonTip = tipAmount / people;
+    var perPersonTotal = totalBill / people;
+
+    outPerTip.textContent = fmt(perPersonTip);
+    outPerTotal.textContent = fmt(perPersonTotal);
+    outTotalTip.textContent = fmt(tipAmount);
+    outGrandTotal.textContent = fmt(totalBill);
+  }
+
+  billInput.addEventListener('input', calculate);
+
+  currencySelect.addEventListener('change', function() {
+    state.currency = currencySelect.value;
+    try { localStorage.setItem('ht_currency', state.currency); } catch (e) {}
+    applyCurrencySymbol();
+    calculate();
+  });
+  try {
+    var saved = localStorage.getItem('ht_currency');
+    if (saved && CURRENCIES[saved]) {
+      state.currency = saved;
+      currencySelect.value = saved;
+    }
+  } catch (e) {}
+  applyCurrencySymbol();
+
+  tipButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tipButtons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      var val = btn.getAttribute('data-tip');
+      if (val === 'custom') {
+        state.customActive = true;
+        customWrap.classList.add('visible');
+        state.tipPercent = parseInt(customSlider.value, 10);
+        customValue.textContent = state.tipPercent + '%';
+      } else {
+        state.customActive = false;
+        customWrap.classList.remove('visible');
+        state.tipPercent = parseInt(val, 10);
+      }
+      calculate();
+    });
+  });
+
+  customSlider.addEventListener('input', function() {
+    state.tipPercent = parseInt(customSlider.value, 10);
+    customValue.textContent = state.tipPercent + '%';
+    calculate();
+  });
+
+  function updatePeople() {
+    peopleVal.textContent = state.people;
+    peopleDown.disabled = state.people <= 1;
+    peopleUp.disabled = state.people >= 20;
+    calculate();
+  }
+  peopleUp.addEventListener('click', function() {
+    if (state.people < 20) { state.people++; updatePeople(); }
+  });
+  peopleDown.addEventListener('click', function() {
+    if (state.people > 1) { state.people--; updatePeople(); }
+  });
+  updatePeople();
+
+  roundButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      roundButtons.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      state.rounding = btn.getAttribute('data-round');
+      calculate();
+    });
+  });
+
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var q = item.querySelector('.faq-q');
+    q.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      faqItems.forEach(function(i) {
+        i.classList.remove('open');
+        var btn = i.querySelector('.faq-q');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        q.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  calculate();
+})();
+</script>
+
+</body>
+</html>
