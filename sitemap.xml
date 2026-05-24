@@ -37,6 +37,30 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://gethandytool.com/blog/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gethandytool.com/blog/15-vs-30-year-mortgage.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gethandytool.com/blog/roth-vs-traditional-401k.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gethandytool.com/blog/84-month-auto-loans.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://gethandytool.com/about.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
